@@ -41,6 +41,9 @@ class Lesson(models.Model):
 		verbose_name = '章节'
 		verbose_name_plural = verbose_name
 
+	def __str__(self):
+		return '《{0}》课程的章节 >> {1}'.format(self.course, self.name)
+
 
 # 每章视频
 class Video(models.Model):
