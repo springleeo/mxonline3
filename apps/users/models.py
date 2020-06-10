@@ -51,6 +51,9 @@ class EmailVerifyRecord(models.Model):
 		verbose_name = '邮箱验证码'
 		verbose_name_plural = verbose_name
 
+	def __str__(self):
+		return '{0}({1})'.format(self.code, self.email)
+
 
 class Banner(models.Model):
 	title = models.CharField('标题', max_length=100)
