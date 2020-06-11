@@ -21,7 +21,7 @@ class BaseSetting(object):
 
 class GlobalSettings(object):
 	site_title = "夜夜笙歌"
-	site_footer = "@springleeo"
+	site_footer = "springleeo"
 	# 收起菜单
 	menu_style = "accordion"
 
