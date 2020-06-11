@@ -18,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -45,7 +44,8 @@ INSTALLED_APPS = [
 	'organization',
 	'operation',
 	'xadmin',
-	'crispy_forms'
+	'crispy_forms',
+	'captcha'
 ]
 
 MIDDLEWARE = [
@@ -128,12 +128,19 @@ USE_TZ = False
 STATIC_URL = '/static/'
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+	os.path.join(BASE_DIR, "static"),
 )
-
 
 # 设置邮箱和用户名均可登录
 AUTHENTICATION_BACKENDS = (
-    'users.views.CustomBackend',
+	'users.views.CustomBackend',
 
 )
+
+# 发送邮件的setting设置
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "@qq.com"
+EMAIL_HOST_PASSWORD = ""
+EMAIL_USE_TLS = True
+EMAIL_FROM = "@qq.com"
