@@ -138,4 +138,3 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # 发送邮件的setting设置
-

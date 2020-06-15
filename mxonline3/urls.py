@@ -27,7 +27,6 @@ urlpatterns = [
     # path('login/', TemplateView.as_view(template_name='login.html'), name='login')
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-
     path('register/', RegisterView.as_view(), name='register'),
     # 验证码url
     path("captcha/", include('captcha.urls')),
@@ -39,5 +38,4 @@ urlpatterns = [
     re_path('reset/(?P<active_code>.*)/', ResetView.as_view(), name='reset_pwd'),
     # 修改密码，用于passwordreset页面提交表单
     path('modify_pwd/', ModifyPwdView.as_view(), name='modify_pwd')
-
 ]

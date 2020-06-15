@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.backends import ModelBackend
 from .models import UserProfile, EmailVerifyRecord
@@ -64,11 +64,11 @@ class LoginView(View):
 # 退出登录
 class LogoutView(View):
     def get(self, request):
-        return render(request, 'index.html', {})
+        request.session.clear()
+        return redirect('/')
+
 
     # 注册用户
-
-
 class RegisterView(View):
     # get方法直接返回页面
     def get(self, request):
