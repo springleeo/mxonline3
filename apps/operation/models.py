@@ -17,6 +17,9 @@ class UserAsk(models.Model):
         verbose_name = '用户咨询'
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return '用户: {0} 手机号: {1}'.format(self.name, self.mobile)
+
 
 # 用户对于课程评论
 class CourseComments(models.Model):
@@ -29,6 +32,9 @@ class CourseComments(models.Model):
     class Meta:
         verbose_name = '课程评论'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return '用户({0})对于《{1}》 评论 :'.format(self.user, self.course)
 
 
 # 用户对于课程，机构，讲师的收藏
@@ -51,6 +57,9 @@ class UserFavorite(models.Model):
         verbose_name = '用户收藏'
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return '用户({0})收藏了{1} '.format(self.user, self.fav_type)
+
 
 # 用户消息表
 class UserMessage(models.Model):
@@ -68,6 +77,9 @@ class UserMessage(models.Model):
         verbose_name = '用户消息'
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return '用户({0})接收了{1} '.format(self.user, self.message)
+
 
 # 用户课程表
 class UserCourse(models.Model):
@@ -79,3 +91,6 @@ class UserCourse(models.Model):
     class Meta:
         verbose_name = '用户课程'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return '用户({0})学习了{1} '.format(self.user, self.course)
