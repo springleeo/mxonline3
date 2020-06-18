@@ -33,6 +33,10 @@ class CourseOrg(models.Model):
 	fav_nums = models.IntegerField('收藏人数', default=0)
 	image = models.ImageField('封面图', upload_to='org/%Y/%m', max_length=100)
 	address = models.CharField('机构地址', max_length=150)
+	# 当学生点击学习课程，找到所属机构，学习人数加1
+	students = models.IntegerField('学习人数', default=0)
+	# 当发布课程就加1
+	course_nums = models.IntegerField('课程数', default=0)
 	# 一个城市可以有很多课程机构，通过将city设置外键，变成课程机构的一个字段
 	# 可以让我们通过机构找到城市
 	city = models.ForeignKey(CityDict, verbose_name='所在城市', on_delete=models.CASCADE)
