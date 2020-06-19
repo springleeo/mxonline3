@@ -1,10 +1,12 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.base import View
 
 # 处理课程结构列表大view
+from operation.forms import UserAskForm
 from organization.models import CourseOrg, CityDict
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
-
+from django.views.decorators.csrf import csrf_exempt
 
 class OrgView(View):
 	def get(self, request):
@@ -63,3 +65,24 @@ class OrgView(View):
 		                                         "hot_orgs": hot_orgs,
 		                                         "sort": sort,
 		                                         })
+
+
+# 用户添加我要学习
+
+class AddUserAskView(View):
+	# 处理表单提交当然post
+
+	def post(self, request):
+		userask_form = UserAskForm(request.POST)
+		# 判断该form是否有效
+		if userask_form.is_valid():
+			# 这里是modelform和form的区别
+			# 它有model的属性
+			# 当commit为true进行真正保存
+			user_ask = userask_form.save(commit=True)
+			# 这样就不需要把一个一个字段取出来然后存到model的对象中之后save
+			# 如果保存成功,返回json字符串,后面content type是告诉浏览器的,
+			return HttpResponse('{"status":"success"}', content_type='application/json')
+		else:
+			# 如果保存失败，返回json字符串,并将form的报错信息通过msg传递到前端
+			return HttpResponse('{"status":"fail", "msg":"您的字段有错误,请检查"}', content_type='application/json')
