@@ -844,7 +844,7 @@ def course():
 
 
 if __name__ == '__main__':
-    # city_dict()
-    # course_org()
+    city_dict()
+    course_org()
     teacher()
     course()
