@@ -470,7 +470,9 @@ course_data = [
         'fav_nums': '23',
         'image': 'courses/2020/06/yuwen.jpg',
         'click_nums': '12',
-        'course_org': '新东方'
+        'course_org': '新东方',
+        'tag': '1',
+        'category': '公共课',
     },
     {
         'name': '语文',
@@ -482,7 +484,10 @@ course_data = [
         'fav_nums': '2',
         'image': 'courses/2020/06/yuwen.jpg',
         'click_nums': '12',
-        'course_org': '厦门大学'
+        'course_org': '厦门大学',
+        'tag': '1',
+        'category': '公共课',
+
     },
     {
         'name': '语文',
@@ -494,7 +499,10 @@ course_data = [
         'fav_nums': '34',
         'image': 'courses/2020/06/yuwen.jpg',
         'click_nums': '62',
-        'course_org': '北京师范大学'
+        'course_org': '北京师范大学',
+        'tag': '1',
+        'category': '公共课',
+
     },
     {
         'name': '语文',
@@ -506,7 +514,10 @@ course_data = [
         'fav_nums': '69',
         'image': 'courses/2020/06/yuwen.jpg',
         'click_nums': '63',
-        'course_org': '清华大学'
+        'course_org': '清华大学',
+        'tag': '1',
+        'category': '公共课',
+
     },
     {
         'name': '语文',
@@ -518,7 +529,10 @@ course_data = [
         'fav_nums': '60',
         'image': 'courses/2020/06/yuwen.jpg',
         'click_nums': '93',
-        'course_org': '北京大学'
+        'course_org': '北京大学',
+        'tag': '1',
+        'category': '公共课',
+
     },
     {
         'name': '数学',
@@ -530,7 +544,10 @@ course_data = [
         'fav_nums': '90',
         'image': 'courses/2020/06/shuxue.jpg',
         'click_nums': '8000',
-        'course_org': '新东方'
+        'course_org': '新东方',
+        'tag': '2',
+        'category': '公共课',
+
     },
     {
         'name': '数学',
@@ -542,7 +559,10 @@ course_data = [
         'fav_nums': '360',
         'image': 'courses/2020/06/shuxue.jpg',
         'click_nums': '93',
-        'course_org': '北京大学'
+        'course_org': '北京大学',
+        'tag': '2',
+        'category': '公共课',
+
     },
     {
         'name': '数学',
@@ -554,7 +574,10 @@ course_data = [
         'fav_nums': '560',
         'image': 'courses/2020/06/shuxue.jpg',
         'click_nums': '930',
-        'course_org': '清华大学'
+        'course_org': '清华大学',
+        'tag': '2',
+        'category': '公共课',
+
     },
     {
         'name': '数学',
@@ -566,7 +589,10 @@ course_data = [
         'fav_nums': '508',
         'image': 'courses/2020/06/shuxue.jpg',
         'click_nums': '190',
-        'course_org': '武汉大学'
+        'course_org': '武汉大学',
+        'tag': '2',
+        'category': '公共课',
+
     },
     {
         'name': '英语',
@@ -578,7 +604,10 @@ course_data = [
         'fav_nums': '40',
         'image': 'courses/2020/06/yingyu.jpg',
         'click_nums': '80',
-        'course_org': '新东方'
+        'course_org': '新东方',
+        'tag': '3',
+        'category': '公共课',
+
     },
     {
         'name': '英语',
@@ -590,7 +619,10 @@ course_data = [
         'fav_nums': '404',
         'image': 'courses/2020/06/yingyu.jpg',
         'click_nums': '80',
-        'course_org': '南京大学'
+        'course_org': '南京大学',
+        'tag': '3',
+        'category': '公共课',
+
     },
     {
         'name': '英语',
@@ -602,7 +634,10 @@ course_data = [
         'fav_nums': '404',
         'image': 'courses/2020/06/yingyu.jpg',
         'click_nums': '80',
-        'course_org': '武汉大学'
+        'course_org': '武汉大学',
+        'tag': '3',
+        'category': '公共课',
+
     },
     {
         'name': '英语',
@@ -614,7 +649,10 @@ course_data = [
         'fav_nums': '4014',
         'image': 'courses/2020/06/yingyu.jpg',
         'click_nums': '800',
-        'course_org': '厦门大学'
+        'course_org': '厦门大学',
+        'tag': '3',
+        'category': '公共课',
+
     },
     {
         'name': '英语',
@@ -626,7 +664,10 @@ course_data = [
         'fav_nums': '11',
         'image': 'courses/2020/06/yingyu.jpg',
         'click_nums': '10',
-        'course_org': '福建师范大学'
+        'course_org': '福建师范大学',
+        'tag': '3',
+        'category': '公共课',
+
     },
     {
         'name': 'python',
@@ -638,7 +679,10 @@ course_data = [
         'fav_nums': '1012',
         'image': 'courses/2020/06/python.jpg',
         'click_nums': '10',
-        'course_org': '福建师范大学'
+        'course_org': '福建师范大学',
+        'tag': '4',
+        'category': '专业课',
+
     },
     {
         'name': 'python',
@@ -650,7 +694,10 @@ course_data = [
         'fav_nums': '1012',
         'image': 'courses/2020/06/python.jpg',
         'click_nums': '10',
-        'course_org': '清华大学'
+        'course_org': '清华大学',
+        'tag': '4',
+        'category': '专业课',
+
     },
     {
         'name': 'python',
@@ -662,7 +709,10 @@ course_data = [
         'fav_nums': '1012',
         'image': 'courses/2020/06/python.jpg',
         'click_nums': '3',
-        'course_org': '卓越教育'
+        'course_org': '卓越教育',
+        'tag': '4',
+        'category': '专业课',
+
     },
     {
         'name': 'python',
@@ -674,7 +724,10 @@ course_data = [
         'fav_nums': '196',
         'image': 'courses/2020/06/python.jpg',
         'click_nums': '31',
-        'course_org': '优学教育'
+        'course_org': '优学教育',
+        'tag': '4',
+        'category': '专业课',
+
     },
     {
         'name': 'python',
@@ -686,7 +739,10 @@ course_data = [
         'fav_nums': '136',
         'image': 'courses/2020/06/python.jpg',
         'click_nums': '9',
-        'course_org': '武汉大学'
+        'course_org': '武汉大学',
+        'tag': '4',
+        'category': '专业课',
+
     },
     {
         'name': 'c语言',
@@ -698,7 +754,10 @@ course_data = [
         'fav_nums': '36',
         'image': 'courses/2020/06/cyuyan.jpg',
         'click_nums': '76',
-        'course_org': '大城小爱'
+        'course_org': '大城小爱',
+        'tag': '5',
+        'category': '专业课',
+
     },
     {
         'name': 'c语言',
@@ -710,7 +769,10 @@ course_data = [
         'fav_nums': '39',
         'image': 'courses/2020/06/cyuyan.jpg',
         'click_nums': '56',
-        'course_org': '清华大学'
+        'course_org': '清华大学',
+        'tag': '5',
+        'category': '专业课',
+
     },
     {
         'name': 'c语言',
@@ -722,7 +784,10 @@ course_data = [
         'fav_nums': '39',
         'image': 'courses/2020/06/cyuyan.jpg',
         'click_nums': '56',
-        'course_org': '后古婚纱'
+        'course_org': '后古婚纱',
+        'tag': '5',
+        'category': '专业课',
+
     },
     {
         'name': 'c语言',
@@ -734,7 +799,10 @@ course_data = [
         'fav_nums': '392',
         'image': 'courses/2020/06/cyuyan.jpg',
         'click_nums': '6',
-        'course_org': '桔子摄影'
+        'course_org': '桔子摄影',
+        'tag': '5',
+        'category': '专业课',
+
     },
     {
         'name': 'c语言',
@@ -746,7 +814,10 @@ course_data = [
         'fav_nums': '352',
         'image': 'courses/2020/06/cyuyan.jpg',
         'click_nums': '8',
-        'course_org': '南京大学'
+        'course_org': '南京大学',
+        'tag': '5',
+        'category': '专业课',
+
     },
     {
         'name': 'java',
@@ -758,7 +829,10 @@ course_data = [
         'fav_nums': '58',
         'image': 'courses/2020/06/java.jpg',
         'click_nums': '853',
-        'course_org': '南京大学'
+        'course_org': '南京大学',
+        'tag': '6',
+        'category': '专业课',
+
     },
     {
         'name': 'java',
@@ -770,7 +844,10 @@ course_data = [
         'fav_nums': '52',
         'image': 'courses/2020/06/java.jpg',
         'click_nums': '3',
-        'course_org': '北京大学'
+        'course_org': '北京大学',
+        'tag': '6',
+        'category': '专业课',
+
     },
     {
         'name': 'java',
@@ -782,7 +859,10 @@ course_data = [
         'fav_nums': '79',
         'image': 'courses/2020/06/java.jpg',
         'click_nums': '99',
-        'course_org': '厦门大学'
+        'course_org': '厦门大学',
+        'tag': '6',
+        'category': '专业课',
+
     },
     {
         'name': 'java',
@@ -794,7 +874,10 @@ course_data = [
         'fav_nums': '728',
         'image': 'courses/2020/06/java.jpg',
         'click_nums': '19',
-        'course_org': '新东方'
+        'course_org': '新东方',
+        'tag': '6',
+        'category': '专业课',
+
     },
     {
         'name': 'java',
@@ -806,7 +889,10 @@ course_data = [
         'fav_nums': '63',
         'image': 'courses/2020/06/java.jpg',
         'click_nums': '39',
-        'course_org': '卓越教育'
+        'course_org': '卓越教育',
+        'tag': '6',
+        'category': '专业课',
+
     },
 
 ]

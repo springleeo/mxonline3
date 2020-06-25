@@ -51,7 +51,7 @@ class LoginView(View):
                 login(request, user)
                 # 跳转到首页 user request会被带回到首页
                 return render(request, "index.html",
-                              {'nickname': UserProfile.objects.get(email=user).nick_name, 'user': user})
+                              {'nickname': UserProfile.objects.get(email=user_name).nick_name, 'user': user})
             # 没有成功说明里面的值是None，并再次跳转回主页面
             else:
                 return render(request, "login.html", {'msg': '用户名或密码错误'})
