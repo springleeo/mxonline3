@@ -12,7 +12,7 @@ from django.db.models import Q
 
 django.setup()
 from organization.models import CityDict, CourseOrg, Teacher
-from courses.models import Course
+from courses.models import Course, Lesson
 
 city_dict_data = [
     {
@@ -473,6 +473,7 @@ course_data = [
         'course_org': '新东方',
         'tag': '1',
         'category': '公共课',
+        'teacher': '愈敏洪',
     },
     {
         'name': '语文',
@@ -487,7 +488,7 @@ course_data = [
         'course_org': '厦门大学',
         'tag': '1',
         'category': '公共课',
-
+        'teacher': '刘德华',
     },
     {
         'name': '语文',
@@ -502,7 +503,7 @@ course_data = [
         'course_org': '北京师范大学',
         'tag': '1',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '语文',
@@ -517,7 +518,7 @@ course_data = [
         'course_org': '清华大学',
         'tag': '1',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '语文',
@@ -532,7 +533,7 @@ course_data = [
         'course_org': '北京大学',
         'tag': '1',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '数学',
@@ -547,7 +548,7 @@ course_data = [
         'course_org': '新东方',
         'tag': '2',
         'category': '公共课',
-
+        'teacher': '周杰伦',
     },
     {
         'name': '数学',
@@ -562,7 +563,7 @@ course_data = [
         'course_org': '北京大学',
         'tag': '2',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '数学',
@@ -577,7 +578,7 @@ course_data = [
         'course_org': '清华大学',
         'tag': '2',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '数学',
@@ -592,7 +593,7 @@ course_data = [
         'course_org': '武汉大学',
         'tag': '2',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '英语',
@@ -607,7 +608,7 @@ course_data = [
         'course_org': '新东方',
         'tag': '3',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '英语',
@@ -622,7 +623,7 @@ course_data = [
         'course_org': '南京大学',
         'tag': '3',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '英语',
@@ -637,7 +638,7 @@ course_data = [
         'course_org': '武汉大学',
         'tag': '3',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '英语',
@@ -652,7 +653,7 @@ course_data = [
         'course_org': '厦门大学',
         'tag': '3',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': '英语',
@@ -667,7 +668,7 @@ course_data = [
         'course_org': '福建师范大学',
         'tag': '3',
         'category': '公共课',
-
+        'teacher': '',
     },
     {
         'name': 'python',
@@ -682,7 +683,7 @@ course_data = [
         'course_org': '福建师范大学',
         'tag': '4',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'python',
@@ -697,7 +698,7 @@ course_data = [
         'course_org': '清华大学',
         'tag': '4',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'python',
@@ -712,7 +713,7 @@ course_data = [
         'course_org': '卓越教育',
         'tag': '4',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'python',
@@ -727,7 +728,7 @@ course_data = [
         'course_org': '优学教育',
         'tag': '4',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'python',
@@ -742,7 +743,7 @@ course_data = [
         'course_org': '武汉大学',
         'tag': '4',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'c语言',
@@ -757,7 +758,7 @@ course_data = [
         'course_org': '大城小爱',
         'tag': '5',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'c语言',
@@ -772,7 +773,7 @@ course_data = [
         'course_org': '清华大学',
         'tag': '5',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'c语言',
@@ -787,7 +788,7 @@ course_data = [
         'course_org': '后古婚纱',
         'tag': '5',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'c语言',
@@ -802,7 +803,7 @@ course_data = [
         'course_org': '桔子摄影',
         'tag': '5',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'c语言',
@@ -817,7 +818,7 @@ course_data = [
         'course_org': '南京大学',
         'tag': '5',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'java',
@@ -832,7 +833,7 @@ course_data = [
         'course_org': '南京大学',
         'tag': '6',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'java',
@@ -847,7 +848,7 @@ course_data = [
         'course_org': '北京大学',
         'tag': '6',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'java',
@@ -862,7 +863,7 @@ course_data = [
         'course_org': '厦门大学',
         'tag': '6',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'java',
@@ -877,7 +878,7 @@ course_data = [
         'course_org': '新东方',
         'tag': '6',
         'category': '专业课',
-
+        'teacher': '',
     },
     {
         'name': 'java',
@@ -892,7 +893,7 @@ course_data = [
         'course_org': '卓越教育',
         'tag': '6',
         'category': '专业课',
-
+        'teacher': '',
     },
 
 ]
@@ -902,7 +903,7 @@ def course():
     key_name = []
     for key in Course._meta.get_fields():
         try:
-            if key.attname not in ['id', 'add_time']:
+            if key.attname not in ['id', 'add_time', 'you_need_know', 'teacher_tell']:
                 key_name.append(key.attname)
         except:
             pass
@@ -916,6 +917,8 @@ def course():
             for j in key_name:
                 if j == 'course_org_id':
                     course[0].course_org_id = CourseOrg.objects.get(name=i['course_org']).id
+                elif j == 'teacher_id':
+                    course[0].teacher_id = Teacher.objects.get(name=i['teacher']).id
                 else:
                     course[0].__setattr__(j, i[j])
             course[0].save()
@@ -924,13 +927,59 @@ def course():
             for j in key_name:
                 if j == 'course_org_id':
                     course.course_org_id = CourseOrg.objects.get(name=i['course_org']).id
+                elif j == 'teacher_id':
+                    course.teacher_id = Teacher.objects.get(name=i['teacher']).id
                 else:
                     course.__setattr__(j, i[j])
             course.save()
 
 
+lesson_data = [
+    {'course': '1',
+     'name': '第一章'},
+    {'course': '1',
+     'name': '第二章'},
+    {'course': '1',
+     'name': '第三章'},
+    {'course': '1',
+     'name': '第四章'},
+    {'course': '1',
+     'name': '第五章'}
+]
+
+
+def lesson():
+    key_name = []
+    for key in Lesson._meta.get_fields():
+        try:
+            if key.attname not in ['id', 'add_time']:
+                key_name.append(key.attname)
+        except:
+            pass
+
+    for i in lesson_data:
+        check = Lesson.objects.filter(Q(name=i['name']) & Q(course_id=i['course']))
+        if check:
+            lesson = check
+            for j in key_name:
+                if j == 'course_id':
+                    lesson[0].course_id = i['course']
+                else:
+                    lesson[0].__setattr__(j, i[j])
+            lesson[0].save()
+        else:
+            lesson = Lesson()
+            for j in key_name:
+                if j == 'course_id':
+                    lesson.course_id = i['course']
+                else:
+                    lesson.__setattr__(j, i[j])
+            lesson.save()
+
+
 if __name__ == '__main__':
-    city_dict()
-    course_org()
-    teacher()
+    # city_dict()
+    # course_org()
+    # teacher()
     course()
+    # lesson()

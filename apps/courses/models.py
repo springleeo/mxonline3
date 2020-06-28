@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.db import models
 
-from organization.models import CourseOrg
+from organization.models import CourseOrg, Teacher
 
 
 # 课程信息表
@@ -25,6 +25,9 @@ class Course(models.Model):
     # 保存点击量，点进页面就算
     click_nums = models.IntegerField('点击数', default=0)
     course_org = models.ForeignKey(CourseOrg, verbose_name='所属机构', on_delete=models.CASCADE, null=True, blank=True)
+    teacher = models.ForeignKey(Teacher, verbose_name='讲师', on_delete=models.CASCADE, null=True, blank=True)
+    you_need_know = models.CharField('课程须知', max_length=300, default=u"一颗勤学的心是本课程必要前提")
+    teacher_tell = models.CharField('老师告诉你', max_length=300, default=u"什么都可以学到,按时交作业,不然叫家长")
     tag = models.CharField('课程标签', max_length=15, default='')
     category = models.CharField('课程类别', max_length=20, default='')
     add_time = models.DateTimeField('添加时间', default=datetime.now)
@@ -59,6 +62,9 @@ class Video(models.Model):
     # 作为一个字段来存储让我们可以知道这个视频对应哪个章节.
     lesson = models.ForeignKey(Lesson, verbose_name='章节', on_delete=models.CASCADE)
     name = models.CharField('视频名', max_length=100)
+    url = models.CharField('访问地址', max_length=200, default='https://mtianyan.gitee.io/')
+    # 使用分钟做后台记录(存储最小单位)前台转换
+    learn_times = models.IntegerField('学习时长(分钟数)', default=0)
     add_time = models.DateTimeField('添加时间', default=datetime.now)
 
     class Meta:
