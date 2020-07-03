@@ -281,6 +281,7 @@ teacher_data = [
 		'work_years': '1436',
 		'work_company': '新东方',
 		'work_position': '总裁',
+		'age':'43',
 		'points': '幽默',
 		'click_nums': '3',
 		'fav_nums': '1',
@@ -292,6 +293,7 @@ teacher_data = [
 		'work_years': '1',
 		'work_company': '新东方',
 		'work_position': '英语老师',
+		'age': '36',
 		'points': '唱歌好听',
 		'click_nums': '3',
 		'fav_nums': '10',
@@ -303,6 +305,7 @@ teacher_data = [
 		'work_years': '9',
 		'work_company': '优学教育',
 		'work_position': '钢琴老师',
+		'age': '21',
 		'points': '指法芬芳',
 		'click_nums': '5',
 		'fav_nums': '123',
@@ -315,6 +318,7 @@ teacher_data = [
 		'work_company': '厦门大学',
 		'work_position': '唱跳老师',
 		'points': '唱跳',
+		'age': '19',
 		'click_nums': '5',
 		'fav_nums': '1232',
 	},
@@ -325,6 +329,7 @@ teacher_data = [
 		'work_years': '11',
 		'work_company': '北京大学',
 		'work_position': '唱跳老师',
+		'age': '25',
 		'points': '唱跳',
 		'click_nums': '59',
 		'fav_nums': '67',
@@ -336,6 +341,7 @@ teacher_data = [
 		'work_years': '11',
 		'work_company': '北京大学',
 		'work_position': '美声老师',
+		'age': '28',
 		'points': '美声',
 		'click_nums': '9',
 		'fav_nums': '7',
@@ -347,6 +353,7 @@ teacher_data = [
 		'work_years': '1',
 		'work_company': '北京大学',
 		'work_position': '美声老师',
+		'age': '21',
 		'points': '美声',
 		'click_nums': '9',
 		'fav_nums': '2',
@@ -358,6 +365,7 @@ teacher_data = [
 		'work_years': '17',
 		'work_company': '南京大学',
 		'work_position': '美声老师',
+		'age': '18',
 		'points': '美声',
 		'click_nums': '19',
 		'fav_nums': '67',
@@ -369,6 +377,7 @@ teacher_data = [
 		'work_years': '17',
 		'work_company': '武汉大学',
 		'work_position': '美声老师',
+		'age': '41',
 		'points': '美声',
 		'click_nums': '2',
 		'fav_nums': '1',
@@ -380,6 +389,7 @@ teacher_data = [
 		'work_years': '27',
 		'work_company': '清华大学',
 		'work_position': '美声老师',
+		'age': '19',
 		'points': '美声',
 		'click_nums': '14',
 		'fav_nums': '167',
@@ -391,6 +401,7 @@ teacher_data = [
 		'work_years': '11',
 		'work_company': '福建师范大学',
 		'work_position': '创作老师',
+		'age': '22',
 		'points': '创作',
 		'click_nums': '0',
 		'fav_nums': '18',
@@ -402,6 +413,7 @@ teacher_data = [
 		'work_years': '4',
 		'work_company': '桔子摄影',
 		'work_position': '修图老师',
+		'age': '18',
 		'points': '修图',
 		'click_nums': '0',
 		'fav_nums': '180',
@@ -413,6 +425,7 @@ teacher_data = [
 		'work_years': '3',
 		'work_company': '后古婚纱',
 		'work_position': '摄影师',
+		'age': '25',
 		'points': '拍照',
 		'click_nums': '0',
 		'fav_nums': '180',
@@ -424,6 +437,7 @@ teacher_data = [
 		'work_years': '10',
 		'work_company': '大城小爱',
 		'work_position': '灯光师',
+		'age': '35',
 		'points': '灯光',
 		'click_nums': '0',
 		'fav_nums': '180',
@@ -435,6 +449,7 @@ teacher_data = [
 		'work_years': '5',
 		'work_company': '北京师范大学',
 		'work_position': '语文',
+		'age': '38',
 		'points': '作文',
 		'click_nums': '6',
 		'fav_nums': '152',
@@ -446,6 +461,7 @@ teacher_data = [
 		'work_years': '5',
 		'work_company': '卓越教育',
 		'work_position': '语言',
+		'age': '19',
 		'points': 'python',
 		'click_nums': '46',
 		'fav_nums': '13',
@@ -1001,8 +1017,8 @@ def lesson():
 
 
 if __name__ == '__main__':
-	city_dict()
-	course_org()
+	# city_dict()
+	# course_org()
 	teacher()
-	course()
-	lesson()
+	# course()
+	# lesson()
