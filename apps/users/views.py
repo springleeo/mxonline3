@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.backends import ModelBackend
 from .models import UserProfile, EmailVerifyRecord
@@ -8,6 +8,7 @@ from .forms import LoginForm, RegisterForm, ActiveForm, ForgetForm, ModifyPwdFor
 from django.contrib.auth.hashers import make_password
 # 发送邮件
 from utils.email_send import send_register_email
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # 实现用户名邮箱均可登录
@@ -67,8 +68,9 @@ class LogoutView(View):
         request.session.clear()
         return redirect('/')
 
-
     # 注册用户
+
+
 class RegisterView(View):
     # get方法直接返回页面
     def get(self, request):
@@ -217,3 +219,10 @@ class ModifyPwdView(View):
         else:
             email = request.POST.get('email', '')
             return render(request, 'password_reset.html', {'email': email, 'modifypwd_form': modifypwd_form})
+
+
+# 个人信息
+class UserinfoView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'usercenter-info.html', {
+        })
