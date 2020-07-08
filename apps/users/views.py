@@ -1,10 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.backends import ModelBackend
 from .models import UserProfile, EmailVerifyRecord
 from django.db.models import Q
 from django.views.generic.base import View
-from .forms import LoginForm, RegisterForm, ActiveForm, ForgetForm, ModifyPwdForm
+from .forms import LoginForm, RegisterForm, ActiveForm, ForgetForm, ModifyPwdForm, UploadImageForm
 from django.contrib.auth.hashers import make_password
 # 发送邮件
 from utils.email_send import send_register_email
@@ -221,8 +222,25 @@ class ModifyPwdView(View):
             return render(request, 'password_reset.html', {'email': email, 'modifypwd_form': modifypwd_form})
 
 
-# 个人信息
 class UserinfoView(LoginRequiredMixin, View):
+    """
+    用户个人信息
+    """
+
     def get(self, request):
         return render(request, 'usercenter-info.html', {
         })
+
+
+class UploadImageView(LoginRequiredMixin, View):
+    """
+    用户修改头像
+    """
+
+    def post(self, request):
+        image_form = UploadImageForm(request.POST, request.FILES, instance=request.user)
+        if image_form.is_valid():
+            image_form.save()
+            return HttpResponse("{'status':'success'}", content_type='application/json')
+        else:
+            return HttpResponse("{'status':'fail'}", content_type='application/json')
