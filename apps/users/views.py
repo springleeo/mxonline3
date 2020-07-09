@@ -1,3 +1,5 @@
+import json
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
@@ -201,6 +203,10 @@ class ResetView(View):
 
 # 改变密码的view
 class ModifyPwdView(View):
+    """
+    修改用户密码
+    """
+
     def post(self, request):
         modifypwd_form = ModifyPwdForm(request.POST)
         if modifypwd_form.is_valid():
@@ -244,3 +250,27 @@ class UploadImageView(LoginRequiredMixin, View):
             return HttpResponse("{'status':'success'}", content_type='application/json')
         else:
             return HttpResponse("{'status':'fail'}", content_type='application/json')
+
+
+class UpdatePwdView(View):
+    """
+    个人中心修改用户密码
+    """
+
+    def post(self, request):
+        modifypwd_form = ModifyPwdForm(request.POST)
+        if modifypwd_form.is_valid():
+            pwd1 = request.POST.get('password1', '')
+            pwd2 = request.POST.get('password2', '')
+            # 如果两次密码不相等，返回错误信息
+            if pwd1 != pwd2:
+                return HttpResponse('{"status":"fail", "msg":"密码不一致"}', content_type='application/json')
+            # 如果密码不一致
+            user = request.user
+            # 加密成密文
+            user.password = make_password(pwd2)
+            user.save()
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        # 验证失败说明密码位数不够
+        else:
+            return HttpResponse(json.dumps(modifypwd_form.errors), content_type='application/json')
