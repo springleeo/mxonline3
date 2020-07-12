@@ -12,6 +12,7 @@ from django.contrib.auth.hashers import make_password
 # 发送邮件
 from utils.email_send import send_register_email
 from django.contrib.auth.mixins import LoginRequiredMixin
+from operation.models import UserCourse
 
 
 # 实现用户名邮箱均可登录
@@ -314,3 +315,15 @@ class UpdateEmailView(LoginRequiredMixin, View):
 
         else:
             return HttpResponse('{"email":"验证码出错"}', content_type='application/json')
+
+
+class MyCourseView(LoginRequiredMixin, View):
+    """
+    查看我的课程
+    """
+
+    def get(self, request):
+        user_courses = UserCourse.objects.filter(user=request.user)
+        return render(request, 'usercenter-mycourse.html', {
+            "user_courses": user_courses
+        })

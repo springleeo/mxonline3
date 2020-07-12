@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 from django.urls import path, re_path
 
-from users.views import UserinfoView, UploadImageView, UpdatePwdView, SendEmailCodeView, UpdateEmailView
+from users.views import UserinfoView, UploadImageView, UpdatePwdView, SendEmailCodeView, UpdateEmailView, MyCourseView
 
 app_name = 'users'
 
@@ -16,5 +16,6 @@ urlpatterns = [
     path('sendemail_code/', SendEmailCodeView.as_view(), name='sendemail_code'),
     # 修改邮箱
     path('update_email/', UpdateEmailView.as_view(), name='update_email'),
-
+    # 我的课程
+    path('mycourse/', MyCourseView.as_view(), name='mycourse'),
 ]
