@@ -35,6 +35,12 @@ class UserProfile(AbstractUser):
     def __str__(self):
         return self.username
 
+    # 获取用户未读消息的数量
+    def unread_nums(self):
+        # 获取用户未读消息读数量
+        from operation.models import UserMessage
+        return UserMessage.objects.filter(user=self.id, has_read=0).count()
+
 
 class EmailVerifyRecord(models.Model):
     SEND_CHOICES = (
