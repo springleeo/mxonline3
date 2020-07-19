@@ -1,9 +1,10 @@
 import json
 
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
+from django.urls import reverse
 
 from courses.models import Course
 from organization.models import CourseOrg, Teacher
@@ -70,19 +71,22 @@ class LoginView(View):
             return render(request, "login.html", {"login_form": login_form})
 
 
-# 退出登录
 class LogoutView(View):
-    def get(self, request):
-        request.session.clear()
-        return redirect('/')
+    """退出登录"""
 
-    # 注册用户
+    # def get(self, request):
+    #     request.session.clear()
+    #     return redirect('/')
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect(reverse('index'))
 
 
 class RegisterView(View):
     """
     注册用户
     """
+
     # get方法直接返回页面
     def get(self, request):
         # 添加验证码
