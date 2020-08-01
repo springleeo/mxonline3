@@ -8,7 +8,7 @@ from django.urls import reverse
 
 from courses.models import Course
 from organization.models import CourseOrg, Teacher
-from .models import UserProfile, EmailVerifyRecord
+from .models import UserProfile, EmailVerifyRecord, Banner
 from django.db.models import Q
 from django.views.generic.base import View
 from .forms import LoginForm, RegisterForm, ActiveForm, ForgetForm, ModifyPwdForm, UploadImageForm, UserInfoForm
@@ -58,10 +58,14 @@ class LoginView(View):
                 # login_in 两参数：request, user
                 # 实际是对request写了一部分东西进去，然后在render的时候：
                 # request是要render回去的。这些信息也就随着返回浏览器。完成登录
-                login(request, user)
-                # 跳转到首页 user request会被带回到首页
-                return render(request, "index.html",
-                              {'nickname': UserProfile.objects.get(email=user_name).nick_name, 'user': user})
+                if user.is_active:
+                    login(request, user)
+                    # 跳转到首页 user request会被带回到首页
+                    return HttpResponseRedirect(reverse('index'))
+                    # return render(request, "index.html",
+                    #               {'nickname': UserProfile.objects.get(email=user_name).nick_name, 'user': user})
+                else:
+                    return render(request, 'login.html', {'msg': '用户未激活'})
             # 没有成功说明里面的值是None，并再次跳转回主页面
             else:
                 return render(request, "login.html", {'msg': '用户名或密码错误'})
@@ -411,4 +415,23 @@ class MyMessageView(LoginRequiredMixin, View):
         messages = p.page(page)
         return render(request, 'usercenter-message.html', {
             "messages": messages
+        })
+
+
+class IndexView(View):
+    """
+    网站首页
+    """
+
+    def get(self, request):
+        # 取出轮播图
+        all_banners = Banner.objects.all().order_by('index')
+        courses = Course.objects.filter(is_banner=False)[:6]
+        banner_courses = Course.objects.filter(is_banner=True)[:3]
+        course_orgs = CourseOrg.objects.all()[:15]
+        return render(request, 'index.html', {
+            'all_banners': all_banners,
+            'courses': courses,
+            'banner_courses': banner_courses,
+            'course_orgs': course_orgs
         })

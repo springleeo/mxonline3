@@ -22,13 +22,14 @@ from django.views.generic import TemplateView
 
 from mxonline3.settings import MEDIA_ROOT
 from organization.views import OrgView
+from users.views import IndexView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView
 from django.conf.urls import include
 
 urlpatterns = [
 	# path('admin/', admin.site.urls),
 	path('xadmin/', xadmin.site.urls),
-	path('', TemplateView.as_view(template_name='index.html'), name='index'),
+	path('', IndexView.as_view(), name='index'),
 	# path('login/', TemplateView.as_view(template_name='login.html'), name='login')
 	path('login/', LoginView.as_view(), name='login'),
 	path('logout/', LogoutView.as_view(), name='logout'),
